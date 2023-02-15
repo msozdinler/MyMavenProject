@@ -16,6 +16,7 @@ public class PresenceOfElement {
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver,10);
 
         driver.get("https://www.seleniumeasy.com");
 
@@ -30,7 +31,7 @@ public class PresenceOfElement {
         //		</div>
 
         WebElement TestNGText=driver.findElement(By.cssSelector(".section-title>h1"));
-      //  wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".section-title>h1")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".section-title>h1")));
         System.out.println(TestNGText.getText());
 
 
